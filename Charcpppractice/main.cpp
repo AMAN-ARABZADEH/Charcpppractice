@@ -145,8 +145,9 @@ if(validate(words)){
     char reversed[] = "monom";
     char tem[] = "monom";
 
-    int js,is;
-    for( is = 0; reversed[is] != '0' && tem[js]; js++, is++){
+    int js = 0;
+    int is;
+    for( is = 0; reversed[is] != '0' && tem[js] != '\0'; js++, is++){
         if(reversed[is] != tem[js]){
             break;
         }
@@ -155,6 +156,23 @@ if(validate(words)){
         cout << "Not palindrom" << endl;
     }else{
         cout << "Palindrome" << endl;
+    }
+
+    
+    
+    // Checking for duplicate char in char string using hash table
+    char duplicates[] = "how do you do my friend?";
+    int H[26] = {0};
+    int d;
+    for(d = 0; duplicates[d] != '\0'; d++){
+        H[duplicates[d]-97] += 1;
+    }
+    for(d = 0; d < 26; d++){
+        if(H[d] >1 ){
+            cout << static_cast<char>(d+97)<< endl;
+            cout << H[d] << endl;
+            cout << endl;
+        }
     }
 
 
