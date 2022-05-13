@@ -139,6 +139,24 @@ if(validate(words)){
     }
 
     cout <<"The reversed order is " << temps << endl;
+    
+    // Palindrome or not
+    // Check for palindrom
+    char reversed[] = "monom";
+    char tem[] = "monom";
+
+    int js,is;
+    for( is = 0; reversed[is] != '0' && tem[js]; js++, is++){
+        if(reversed[is] != tem[js]){
+            break;
+        }
+    }
+    if(reversed[is] != tem[js]){
+        cout << "Not palindrom" << endl;
+    }else{
+        cout << "Palindrome" << endl;
+    }
+
 
 
         return 0;
