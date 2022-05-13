@@ -78,7 +78,70 @@ if(validate(words)){
 }else{
     cout << "Not valid passord!" << endl;
 }
+    
+    
+    
+    
+    
+    // Online C++ compiler to run C++ program online
 
 
-    return 0;
-}
+    int i2, j2;
+    char sentence[50];
+    char reverse[50];
+    cout << "Enter a sentence les than 50 characters  to see the reverse: ";
+    cin.getline(sentence, 50);
+
+    for(i2 = 0; sentence[i2] != '\0'; i2++);
+    int len = i2;
+    len--;
+    for(j2 = 0; len >= 0; len--, j2++){
+        reverse[j2] = sentence[len];
+    }
+    reverse[j2] = '\0';
+    cout << "The reversed order of the sentence is:\n" << reverse << endl;
+
+
+    // Now thwe second method we do it without using any extra char array,
+    // we can do it just with a extra char character.
+    cout << "Enter a sentence les than 50 characters  to see the reverse: ";
+    char  sentence2[50];
+    cin.getline(sentence2, 50);
+
+    char temp;
+    int i1,j1,t;
+    for(i1 = 0; sentence2[i1] != '\0'; i1++);
+    t = i1;
+    t--;
+    for(j1 = 0; t >= 0; t--, j1++){
+        temp = sentence2[t];
+        sentence2[t] = sentence2[j1];
+        sentence2[j1] = temp;
+    }
+
+    sentence2[j1] = '\0';
+    cout << " The reverse order using swecond method: " << sentence2<< "  "<< endl;
+
+
+
+    // this is another method for reversing the string in c++;
+
+    cout << "Enter a sentence: ";
+    string sentences;
+    getline(cin, sentences);
+
+    string temps;
+
+    for(int i = sentences.length() -1; i >= 0; i--){
+
+         temps += sentences[i];
+
+    }
+
+    cout <<"The reversed order is " << temps << endl;
+
+
+        return 0;
+    }
+
+
